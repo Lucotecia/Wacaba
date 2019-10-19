@@ -1,12 +1,11 @@
 #include "lexer.hpp"
 #include <iostream>
 
-void lexer(){
-    std::cout << source->back();
-    source->pop_back();
-    std::cout << source->back();
-    source->pop_back();
-    std::cout << source->back() << std::endl;
-    source->pop_back();
-    return;
+std::queue<Token*>* lexer(std::queue<std::string> *source){
+    std::queue<Token*> *ret = new std::queue<Token*>();
+    while(!source->empty()){
+        std::cout << source->front() << std::endl;
+        source->pop();
+    }
+    return ret;
 }
