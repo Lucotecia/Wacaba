@@ -1,3 +1,6 @@
-test1
-test2
-test3
+int a = 3 +-+- -4;
+bool b=43==(a+=9);
+float number=-1.4234564233487564534234567;
+string str = "9gbskjbnaあいう漢字""";
+char character1 = '若';
+

@@ -2,28 +2,29 @@
 #define INCLUDE_LEXER_HPP
 #include <queue>
 #include <string>
-
+#include <cstdint>
 
 enum TokenKind {
     TK_RESERVED,
     TK_IDENT,
-    TK_NUM,
-    TK_EOF
+    TK_INTEGER,
+    TK_FLOAT,
+    TK_CHARACTER,
+    TK_STRING,
+    TK_TYPE
 };
 
 union Value {
-    double d;
-    float f;
-    int64_t i;
-    std::string str;
+    double f;
+    std::uint64_t i;
 };
 
-struct Token;
-struct Token {
+
+class Token {
+public:
     TokenKind kind;
-    std::string name;
-    Value val;
     std::string str;
+    Value val;
 };
 
 std::queue<Token*>* lexer(std::queue<std::string>*);
